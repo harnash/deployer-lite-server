@@ -9,7 +9,11 @@ setup(
     author='£ukasz Harasimowicz',
     author_email='dev@harnash.eu',
     description='',
+    tests_require=[
+        'nose==1.3.7',
+    ],
     install_requires=[
         'pyzmq==14.7.0',
+        'click==4.1',
     ]
 )
