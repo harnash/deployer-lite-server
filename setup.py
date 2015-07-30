@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(
-    name='deployer_lite_agent',
+    name='deployer_lite',
     version='0.0.1',
     packages=['agent', 'core', 'server', ],
     url='https://github.com/harnash/deployer-lite',
