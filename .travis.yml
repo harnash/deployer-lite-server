@@ -10,6 +10,6 @@ install:
   - pip install -e .
   - pip install coveralls
 # command to run tests
-script: nosetests --cover-package=server --cover-package=agent --cover-package=core
+script: nosetests --with-coverage --cover-package=server --cover-package=agent --cover-package=core
 after_success:
   - coveralls
