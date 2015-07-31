@@ -6,4 +6,6 @@ import click
 
 @click.command()
 def register():
-    print("Works!")
+    click.echo("Works!")
+
+    return 0
