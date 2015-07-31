@@ -6,4 +6,4 @@ import click
 
 @click.command()
 def register():
-    print("Works!\n")
+    print("Works!")
