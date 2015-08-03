@@ -44,7 +44,7 @@ setup(
     },
     tests_require=[
         'nose==1.3.7',
-        'coverage==4.0a6',
+        'coverage==4.0b1',
     ],
     install_requires=[
         'pyzmq==14.7.0',
