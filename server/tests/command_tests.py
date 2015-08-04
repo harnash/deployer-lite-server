@@ -8,6 +8,6 @@ import server.commands as commands
 
 
 def register_test():
-    result = cli_runner.invoke(commands.register)
+    result = cli_runner.invoke(commands.run)
     nose.tools.assert_equal(result.exit_code, 0, "Command returned non-zero exit code")
     nose.tools.assert_equal(result.output, "Works!\n")

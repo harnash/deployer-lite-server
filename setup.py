@@ -18,6 +18,7 @@ setup(
     author_email='dev@harnash.eu',
     description='',
     long_description=long_description,
+    test_suite = 'nose.collector',
     classifiers=[
         'Development Status :: 3 - Alpha',
 
@@ -49,5 +50,6 @@ setup(
     install_requires=[
         'pyzmq==14.7.0',
         'click==4.1',
+        'pep3143daemon==0.0.6',
     ]
 )
