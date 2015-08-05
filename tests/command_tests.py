@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import nose.tools
 
 from . import cli_runner
-import commands as commands
+from server import commands
 
 
 def register_test():
