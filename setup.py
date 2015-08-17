@@ -18,7 +18,7 @@ setup(
     author_email='dev@harnash.eu',
     description='',
     long_description=long_description,
-    test_suite = 'nose.collector',
+    test_suite='nose.collector',
     classifiers=[
         'Development Status :: 3 - Alpha',
 
@@ -40,7 +40,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'deployer-server = commands:register',
+            'deployer-server = server.commands:register',
         ],
     },
     tests_require=[

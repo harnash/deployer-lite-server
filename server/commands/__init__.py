@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import sys
 import click
+from contextlib import contextmanager
 import time
 import zmq
 from pep3143daemon import DaemonContext, PidFile
+
+
+@contextmanager
+def __dummy_context(pidfile):
+    yield
 
 
 @click.group()
@@ -18,10 +23,10 @@ def register():
 
 
 @cli.command()
-def run():
-    pid_file = PidFile('/tmp/server.pid')
-
-    with DaemonContext(pidfile=pid_file):
+@click.option('-D','--daemon/--no-daemon', default=False)
+@click.option('-d', '--dry-run/--no-dry-run', default=False)
+def run(daemon, dry_run):
+    def main():
         click.echo('Daemon starting...')
         context = zmq.Context()
 
@@ -35,6 +40,9 @@ def run():
         # Second, synchronize with publisher
         syncclient = context.socket(zmq.REQ)
         syncclient.connect('tcp://localhost:5562')
+
+        if dry_run:
+            return 0
 
         click.echo('Synchronizing')
 
@@ -55,3 +63,12 @@ def run():
             nbr += 1
 
         click.echo('Received %d updates' % nbr)
+
+        return 0
+
+    if daemon:
+        pid_file = PidFile('/tmp/server.pid')
+        with DaemonContext(pidfile=pid_file):
+            return main()
+    else:
+            return main()

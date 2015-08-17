@@ -8,6 +8,6 @@ from server import commands
 
 
 def register_test():
-    result = cli_runner.invoke(commands.run)
+    result = cli_runner.invoke(commands.run, ['--dry-run', ])
     nose.tools.assert_equal(result.exit_code, 0, "Command returned non-zero exit code")
-    nose.tools.assert_equal(result.output, "Works!\n")
+    nose.tools.assert_equal(result.output, "Daemon starting...\n")
