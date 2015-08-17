@@ -2,15 +2,9 @@
 from __future__ import unicode_literals
 
 import click
-from contextlib import contextmanager
 import time
 import zmq
 from pep3143daemon import DaemonContext, PidFile
-
-
-@contextmanager
-def __dummy_context(pidfile):
-    yield
 
 
 @click.group()
