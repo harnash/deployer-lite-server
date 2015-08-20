@@ -50,6 +50,7 @@ setup(
     install_requires=[
         'pyzmq==14.7.0',
         'click==5.1',
+        'colorama==0.3.3',
         'pep3143daemon==0.0.6',
     ]
 )

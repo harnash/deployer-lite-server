@@ -1,0 +1,5 @@
+core:
+  publish_addres: tcp://*:5561
+  publish_high_watermark: 1100000
+  sync_addres: tcp://*:5582
+  pid_file: /tmp/server.pid
